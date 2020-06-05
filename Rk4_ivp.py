@@ -28,20 +28,20 @@ def func3(x,y,z,t):
 for i in range(len(t)-1):
 
     k1_x = func1(x[i],y[i],z[i],t[i])
-    k1_y = func1(x[i],y[i],z[i],t[i])
-    k1_z = func1(x[i],y[i],z[i],t[i])
+    k1_y = func2(x[i],y[i],z[i],t[i])
+    k1_z = func3(x[i],y[i],z[i],t[i])
 
     k2_x =func1(x[i]+0.5*h*k1_x,y[i]+0.5*h*k1_y,z[i]+0.5*h*k1_z,t[i]+0.5*h)
-    k2_y =func1(x[i]+0.5*h*k1_x,y[i]+0.5*h*k1_y,z[i]+0.5*h*k1_z,t[i]+0.5*h)
-    k2_z =func1(x[i]+0.5*h*k1_x,y[i]+0.5*h*k1_y,z[i]+0.5*h*k1_z,t[i]+0.5*h)
+    k2_y =func2(x[i]+0.5*h*k1_x,y[i]+0.5*h*k1_y,z[i]+0.5*h*k1_z,t[i]+0.5*h)
+    k2_z =func3(x[i]+0.5*h*k1_x,y[i]+0.5*h*k1_y,z[i]+0.5*h*k1_z,t[i]+0.5*h)
 
     k3_x =func1(x[i]+0.5*h*k2_x,y[i]+0.5*h*k2_y,z[i]+0.5*h*k2_z,t[i]+0.5*h)
-    k3_y =func1(x[i]+0.5*h*k2_x,y[i]+0.5*h*k2_y,z[i]+0.5*h*k2_z,t[i]+0.5*h)
-    k3_z =func1(x[i]+0.5*h*k2_x,y[i]+0.5*h*k2_y,z[i]+0.5*h*k2_z,t[i]+0.5*h)
+    k3_y =func2(x[i]+0.5*h*k2_x,y[i]+0.5*h*k2_y,z[i]+0.5*h*k2_z,t[i]+0.5*h)
+    k3_z =func3(x[i]+0.5*h*k2_x,y[i]+0.5*h*k2_y,z[i]+0.5*h*k2_z,t[i]+0.5*h)
 
     k4_x =func1(x[i]+h*k3_x,y[i]+h*k3_y,z[i]+h*k3_z,t[i]+h)
-    k4_y =func1(x[i]+h*k3_x,y[i]+h*k3_y,z[i]+h*k3_z,t[i]+h)
-    k4_z =func1(x[i]+h*k3_x,y[i]+h*k3_y,z[i]+h*k3_z,t[i]+h)
+    k4_y =func2(x[i]+h*k3_x,y[i]+h*k3_y,z[i]+h*k3_z,t[i]+h)
+    k4_z =func3(x[i]+h*k3_x,y[i]+h*k3_y,z[i]+h*k3_z,t[i]+h)
 
     x_s =x[i] + (h/6)*(k1_x +2*k2_x +2*k3_x +k4_x)
     y_s =y[i] + (h/6)*(k1_y +2*k2_y +2*k3_y +k4_y)
